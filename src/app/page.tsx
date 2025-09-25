@@ -2,101 +2,473 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <h1 className="text-2xl font-bold text-gray-900">NextExpo</h1>
+            </div>
+            
+            {/* Navigation */}
+            <nav className="hidden md:flex space-x-8">
+              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Ana Sayfa</a>
+              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Hizmetler</a>
+              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">Hakkımızda</a>
+              <a href="#portfolio" className="text-gray-700 hover:text-blue-600 transition-colors">Portfolyo</a>
+              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">İletişim</a>
+            </nav>
+            
+            {/* CTA Button */}
+            <div className="hidden md:block">
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                Proje Başlat
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="pt-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Yaratıcı Tasarım Çözümleri
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Markanızı dijital dünyada öne çıkaracak, modern ve etkileyici tasarım çözümleri sunuyoruz. 
+                Web tasarımından marka kimliğine, her alanda profesyonel hizmet.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                  Projeye Başla
+                </button>
+                <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
+                  Portfolyo İncele
+                </button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Dijital Dönüşüm</h3>
+                <p className="text-blue-100 mb-6">
+                  İşletmenizi dijital dünyaya taşıyacak, kullanıcı deneyimini ön planda tutan çözümler.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/20 rounded-lg p-4">
+                    <h4 className="font-semibold">Web Tasarım</h4>
+                    <p className="text-sm text-blue-100">Modern ve responsive</p>
+                  </div>
+                  <div className="bg-white/20 rounded-lg p-4">
+                    <h4 className="font-semibold">Marka Kimliği</h4>
+                    <p className="text-sm text-blue-100">Güçlü ve tutarlı</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Hizmetlerimiz
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Markanızın dijital dünyada güçlü bir varlık göstermesi için ihtiyaç duyduğu tüm hizmetleri tek çatı altında sunuyoruz.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Web Tasarım & Geliştirme</h3>
+              <p className="text-gray-600 mb-6">
+                Modern, responsive ve kullanıcı dostu web siteleri tasarlıyor ve geliştiriyoruz.
+              </p>
+              <ul className="text-sm text-gray-500 space-y-2">
+                <li>• Responsive tasarım</li>
+                <li>• SEO optimizasyonu</li>
+                <li>• Hızlı yükleme</li>
+                <li>• Mobil uyumluluk</li>
+              </ul>
+            </div>
+            
+            <div className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Grafik Tasarım</h3>
+              <p className="text-gray-600 mb-6">
+                Markanızın görsel kimliğini güçlendiren yaratıcı grafik tasarım çözümleri.
+              </p>
+              <ul className="text-sm text-gray-500 space-y-2">
+                <li>• Logo tasarımı</li>
+                <li>• Kurumsal kimlik</li>
+                <li>• Broşür ve katalog</li>
+                <li>• Sosyal medya tasarımı</li>
+              </ul>
+            </div>
+            
+            <div className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Dijital Pazarlama</h3>
+              <p className="text-gray-600 mb-6">
+                Markanızın dijital dünyada görünürlüğünü artıran stratejik pazarlama çözümleri.
+              </p>
+              <ul className="text-sm text-gray-500 space-y-2">
+                <li>• SEO optimizasyonu</li>
+                <li>• Sosyal medya yönetimi</li>
+                <li>• Google Ads</li>
+                <li>• İçerik pazarlama</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Hakkımızda
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                2015 yılından beri dijital dünyada yaratıcı çözümler sunan NextExpo, 
+                markaların dijital dönüşüm süreçlerinde güvenilir ortağı olmuştur.
+              </p>
+              <p className="text-lg text-gray-600 mb-8">
+                Uzman ekibimiz, her projede müşteri memnuniyetini ön planda tutarak, 
+                modern teknolojiler ve yaratıcı tasarım anlayışı ile başarılı sonuçlar elde etmektedir.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">150+</div>
+                  <div className="text-gray-600">Tamamlanan Proje</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">8+</div>
+                  <div className="text-gray-600">Yıllık Deneyim</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
+                  <div className="text-gray-600">Mutlu Müşteri</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+                  <div className="text-gray-600">Destek</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Misyonumuz</h3>
+                <p className="text-blue-100 mb-6">
+                  Her projede müşteri memnuniyetini ön planda tutarak, 
+                  modern teknolojiler ve yaratıcı tasarım anlayışı ile başarılı sonuçlar elde etmek.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                    <span>Kaliteli hizmet anlayışı</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                    <span>Yaratıcı çözümler</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                    <span>Müşteri odaklı yaklaşım</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Portfolyo
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Gerçekleştirdiğimiz projelerden öne çıkan örnekler. Her proje, 
+              müşteri ihtiyaçlarına özel çözümler sunma anlayışımızın bir yansımasıdır.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <div className="text-white text-center">
+                  <h3 className="text-xl font-bold mb-2">E-Ticaret Sitesi</h3>
+                  <p className="text-blue-100">Modern ve kullanıcı dostu</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="font-semibold text-gray-900 mb-2">Online Mağaza Projesi</h4>
+                <p className="text-gray-600 text-sm mb-4">
+                  Responsive tasarım, hızlı yükleme ve kullanıcı dostu arayüz ile e-ticaret deneyimi.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Web Tasarım</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">E-Ticaret</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                <div className="text-white text-center">
+                  <h3 className="text-xl font-bold mb-2">Kurumsal Web Sitesi</h3>
+                  <p className="text-purple-100">Profesyonel ve modern</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="font-semibold text-gray-900 mb-2">Şirket Web Sitesi</h4>
+                <p className="text-gray-600 text-sm mb-4">
+                  Kurumsal kimlik ve modern tasarım anlayışı ile profesyonel web varlığı.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Kurumsal</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Responsive</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                <div className="text-white text-center">
+                  <h3 className="text-xl font-bold mb-2">Mobil Uygulama</h3>
+                  <p className="text-green-100">Kullanıcı odaklı tasarım</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="font-semibold text-gray-900 mb-2">Mobil App Tasarımı</h4>
+                <p className="text-gray-600 text-sm mb-4">
+                  Kullanıcı deneyimini ön planda tutan, modern ve işlevsel mobil uygulama tasarımı.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Mobil</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">UX/UI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              İletişim
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Projenizi hayata geçirmek için bizimle iletişime geçin. 
+              Size en uygun çözümü birlikte bulalım.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Proje Başlat</h3>
+              <form className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Ad Soyad</label>
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Adınız ve soyadınız"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">E-posta</label>
+                  <input 
+                    type="email" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="ornek@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                  <input 
+                    type="tel" 
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="+90 5XX XXX XX XX"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Proje Detayları</label>
+                  <textarea 
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Projeniz hakkında detayları paylaşın..."
+                  ></textarea>
+                </div>
+                <button 
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                >
+                  Mesaj Gönder
+                </button>
+              </form>
+            </div>
+            
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-6">İletişim Bilgileri</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">E-posta</div>
+                      <div className="text-gray-600">info@nextexpo.com.tr</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Telefon</div>
+                      <div className="text-gray-600">+90 212 XXX XX XX</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                      <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Adres</div>
+                      <div className="text-gray-600">İstanbul, Türkiye</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-blue-50 rounded-xl p-6">
+                <h4 className="font-semibold text-gray-900 mb-4">Çalışma Saatleri</h4>
+                <div className="space-y-2 text-gray-600">
+                  <div className="flex justify-between">
+                    <span>Pazartesi - Cuma</span>
+                    <span>09:00 - 18:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Cumartesi</span>
+                    <span>10:00 - 16:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Pazar</span>
+                    <span>Kapalı</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">NextExpo</h3>
+              <p className="text-gray-400 mb-4">
+                Yaratıcı tasarım çözümleri ile markanızı dijital dünyada öne çıkarıyoruz.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Hizmetler</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition-colors">Web Tasarım</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Grafik Tasarım</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Dijital Pazarlama</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">SEO</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Şirket</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white transition-colors">Hakkımızda</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Portfolyo</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Kariyer</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">İletişim</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>info@nextexpo.com.tr</li>
+                <li>+90 212 XXX XX XX</li>
+                <li>İstanbul, Türkiye</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 NextExpo. Tüm hakları saklıdır.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
