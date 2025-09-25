@@ -17,7 +17,7 @@ export default function About() {
             </p>
             <p className="text-lg text-gray-600 mb-8">
               Modern tasarım anlayışımız ve yenilikçi yaklaşımımızla her projede 
-              "next level" standartları hedefliyoruz.
+              &quot;next level&quot; standartları hedefliyoruz.
             </p>
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">

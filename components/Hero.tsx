@@ -1,13 +1,17 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section id="home" className="bg-gradient-to-r from-black via-gray-800 to-black text-white py-20 mt-16">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-8">
           {/* Büyük Next Expo Logosu */}
-          <img 
-            src="/logo.png/468004891_1714512139196293_6101156079016187826_n.jpg"
+          <Image 
+            src="/logo.png"
             alt="Next Expo Logo" 
-            className="w-24 h-24 mx-auto mb-6 object-contain"
+            width={96}
+            height={96}
+            className="mx-auto mb-6 object-contain"
           />
         </div>
         <h1 className="text-5xl md:text-6xl font-bold mb-6">

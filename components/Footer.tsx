@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
     return (
       <footer className="bg-black text-white py-12">
@@ -5,10 +7,12 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <img 
-                  src="/logo.png/468004891_1714512139196293_6101156079016187826_n.jpg"
+                <Image 
+                  src="/logo.png"
                   alt="Next Expo Logo" 
-                  className="w-12 h-12 object-contain"
+                  width={48}
+                  height={48}
+                  className="object-contain"
                 />
                 <h3 className="text-2xl font-bold">Next Expo</h3>
               </div>
