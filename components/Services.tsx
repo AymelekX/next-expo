@@ -48,9 +48,9 @@ export default function Services() {
               <h3 className="text-xl font-semibold mb-3 text-black">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
               <div className="mt-4">
-                <button className="text-yellow-600 font-semibold hover:text-black transition">
+                <a href={`/hizmetler/${slugify(service.title)}`} className="text-yellow-600 font-semibold hover:text-black transition">
                   Detay →
-                </button>
+                </a>
               </div>
             </div>
           ))}
@@ -58,4 +58,19 @@ export default function Services() {
       </div>
     </section>
   );
+}
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/ç/g, 'c')
+    .replace(/ğ/g, 'g')
+    .replace(/ı/g, 'i')
+    .replace(/ö/g, 'o')
+    .replace(/ş/g, 's')
+    .replace(/ü/g, 'u')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
 }

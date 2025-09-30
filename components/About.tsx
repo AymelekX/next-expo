@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -21,13 +23,18 @@ export default function About() {
               uygulama ve yaratıcı tasarımlarla hayallerinizi gerçeğe dönüştürüyoruz.
             </p>
           </div>
-          <div className="bg-gradient-to-r from-black to-gray-800 h-96 rounded-lg flex items-center justify-center relative">
-            <div className="absolute inset-4 border-4 border-yellow-400"></div>
-            <div className="text-white text-center z-10">
-              <div className="w-16 h-16 bg-yellow-400 border-2 border-white flex items-center justify-center font-bold text-black text-lg mx-auto mb-4">
-                NE
-              </div>
-              <p className="text-xl">Profesyonel Stand Tasarımı</p>
+          <div className="relative h-96 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+            <Image
+              src="/images/about.jpg"
+              alt="Next Expo Hakkımızda Görseli"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 text-white">
+              <p className="text-sm opacity-90"></p>
             </div>
           </div>
         </div>
