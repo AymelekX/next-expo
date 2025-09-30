@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -6,8 +7,8 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-3">
           {/* Logo */}
-          <div className="w-12 h-12 bg-yellow-400 border-2 border-black flex items-center justify-center font-bold text-black text-sm">
-            NE
+          <div className="relative w-10 h-10 rounded overflow-hidden">
+            <Image src="/logo.jpg" alt="Next Expo Logo" fill sizes="40px" className="object-cover" />
           </div>
           <div className="text-2xl font-bold text-black">
             Next Expo
