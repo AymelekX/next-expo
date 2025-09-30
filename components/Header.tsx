@@ -15,7 +15,7 @@ export default function Header() {
           <a href="#home" className="text-gray-700 hover:text-yellow-400 font-medium">Ana Sayfa</a>
           <a href="#services" className="text-gray-700 hover:text-yellow-400 font-medium">Hizmetler</a>
           <a href="#about" className="text-gray-700 hover:text-yellow-400 font-medium">Hakkımızda</a>
-          <a href="#portfolio" className="text-gray-700 hover:text-yellow-400 font-medium">Portfolyo</a>
+          <a href="/projeler" className="text-gray-700 hover:text-yellow-400 font-medium">Portfolyo</a>
           <a href="#contact" className="text-gray-700 hover:text-yellow-400 font-medium">İletişim</a>
         </nav>
         <button className="md:hidden">
