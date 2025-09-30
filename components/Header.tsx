@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="bg-white shadow-md fixed w-full top-0 z-50">
@@ -12,11 +14,11 @@ export default function Header() {
           </div>
         </div>
         <nav className="hidden md:flex space-x-6">
-          <a href="#home" className="text-gray-700 hover:text-yellow-400 font-medium">Ana Sayfa</a>
-          <a href="#services" className="text-gray-700 hover:text-yellow-400 font-medium">Hizmetler</a>
-          <a href="#about" className="text-gray-700 hover:text-yellow-400 font-medium">Hakkımızda</a>
-          <a href="/projeler" className="text-gray-700 hover:text-yellow-400 font-medium">Portfolyo</a>
-          <a href="#contact" className="text-gray-700 hover:text-yellow-400 font-medium">İletişim</a>
+          <Link href="/#home" className="text-gray-700 hover:text-yellow-400 font-medium">Ana Sayfa</Link>
+          <Link href="/#services" className="text-gray-700 hover:text-yellow-400 font-medium">Hizmetler</Link>
+          <Link href="/#about" className="text-gray-700 hover:text-yellow-400 font-medium">Hakkımızda</Link>
+          <Link href="/projeler" className="text-gray-700 hover:text-yellow-400 font-medium">Portfolyo</Link>
+          <Link href="/#contact" className="text-gray-700 hover:text-yellow-400 font-medium">İletişim</Link>
         </nav>
         <button className="md:hidden">
           <span className="block w-6 h-0.5 bg-black mb-1"></span>
