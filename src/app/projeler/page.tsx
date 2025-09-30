@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Contact from "../../../components/Contact";
 import Footer from "../../../components/Footer";
 
@@ -34,7 +35,7 @@ export default function ProjelerPage() {
         <nav className="text-sm text-gray-500 mb-6" aria-label="breadcrumb">
           <ol className="flex items-center space-x-2">
             <li>
-              <a href="/" className="hover:text-yellow-400">Ana Sayfa</a>
+              <Link href="/" className="hover:text-yellow-400">Ana Sayfa</Link>
             </li>
             <li className="text-gray-400">/</li>
             <li className="text-gray-900">Projeler</li>

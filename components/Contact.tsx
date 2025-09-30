@@ -40,7 +40,7 @@ export default function Contact() {
 
       setIsSuccess(true);
       e.currentTarget.reset();
-    } catch (_) {
+    } catch {
       setIsSuccess(false);
     } finally {
       setIsSubmitting(false);
