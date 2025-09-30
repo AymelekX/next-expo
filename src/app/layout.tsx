@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NextExpo - Yaratıcı Tasarım Ajansı",
-  description: "Modern ve yaratıcı tasarım çözümleri sunan profesyonel tasarım ajansı. Web tasarım, grafik tasarım, marka kimliği ve dijital pazarlama hizmetleri.",
+  title: "NextExpo - Fuar Stand Tasarımları",
+  description: "Modern ve yaratıcı fuar standları tasarımları ve mimarlık hizmetleri.",
 };
 
 export default function RootLayout({
